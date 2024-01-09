@@ -11,14 +11,5 @@ export NVM_DIR="$HOME/.nvm"
 
 npm install
 
-# install pm2
-npm install pm2 -g
-
-# start the app with PM2
-pm2 start app.js --name "my-app"
-
-# save the current process list for restarts
-pm2 save
-
-# make pm2 auto-start on boot
-pm2 startup
+# start the app
+node app.js > app.out.log 2> app.err.log < /dev/null &
